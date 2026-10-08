@@ -26,7 +26,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Prepara i collegamenti della pagina 404
         env:
-          VIHTA_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          VIVI_BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: python3 scripts/prepare-pages.py public "$VIVI_BASE_PATH"
       - name: Prepara le pagine statiche
         uses: actions/upload-pages-artifact@v4
