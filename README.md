@@ -1,4 +1,4 @@
-# VIHTA · Valle Soana — pacchetto GitHub v18
+# VIVI · Valle Soana — pacchetto GitHub v18
 
 Versione aggiornata all’8 ottobre 2026, compresa la correzione del titolo “Leggere il cambiamento”.
 
