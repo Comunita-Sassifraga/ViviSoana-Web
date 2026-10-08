@@ -287,3 +287,20 @@ body.menu-open .mobile-cta{display:none}
   .company-card h3{font-size:clamp(2rem,10vw,2.55rem)}
   .vihta-title-block h2{font-size:clamp(5.5rem,27vw,7rem)}
 }
+
+/* Evita la sovrapposizione nella sezione VIHTA */
+.vihta-title-block {
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.vihta-title-block h2 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  white-space: nowrap;
+}
+
+@supports (font-size: 1cqi) {
+  .vihta-title-block h2 {
+    font-size: clamp(3rem, 34cqi, 12rem);
+  }
+}
