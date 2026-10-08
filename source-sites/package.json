@@ -1,0 +1,16 @@
+{
+  "name": "vihta-val-soana",
+  "version": "18.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/build.mjs",
+    "db:generate": "drizzle-kit generate"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.5"
+  }
+}

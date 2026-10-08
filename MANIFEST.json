@@ -1,0 +1,13 @@
+{
+  "title": "VIHTA · Valle Soana",
+  "export_version": "18-github-pages",
+  "created_date": "2026-10-08",
+  "source_commit": "f4088dbbee2d803c0fcc5dd0596ede558dff8721",
+  "pages_directory": "public",
+  "deployment_visibility": "public",
+  "deployment_trigger": "workflow_dispatch",
+  "contact_mode": "mailto-draft-user-confirms-send",
+  "contact_recipient": "info@sassifraga.org",
+  "github_database_storage": false,
+  "original_backend_source": "source-sites/worker"
+}
