@@ -145,6 +145,14 @@ h2{font-size:clamp(2.75rem,5.4vw,5.4rem);line-height:.96;letter-spacing:-.052em;
 .recognition-grid-v10 article{border:1px solid var(--line);border-radius:16px;padding:24px;min-height:155px;background:#fbfaf6}
 .recognition-grid-v10 strong{display:block;font-size:1rem;margin-bottom:10px}
 .recognition-grid-v10 p{margin:0;color:var(--muted);font-size:.84rem}
+.passport-digital-twin{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,.8fr);gap:34px;margin-top:18px;padding:32px;background:#eef4ee;border:1px solid #d9e5db;border-radius:var(--r)}
+.passport-digital-twin h4{font-size:clamp(1.65rem,2.7vw,2.7rem);line-height:1.08;letter-spacing:-.035em;margin:0 0 20px}
+.passport-digital-twin p:not(.eyebrow){color:var(--muted);margin:0 0 14px}
+.passport-digital-twin-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.passport-digital-twin-details{border-left:1px solid #c8d8cc;padding-left:28px;align-self:center}
+.passport-digital-twin-details strong{display:block;margin-bottom:14px;font-size:.96rem}
+@media (max-width:960px){.passport-digital-twin{grid-template-columns:1fr}.passport-digital-twin-details{border-left:0;border-top:1px solid #c8d8cc;padding:20px 0 0}}
+@media (max-width:680px){.passport-digital-twin{padding:24px}.passport-digital-twin-actions .button{width:100%;text-align:center}}
 
 @media (max-width:960px){
   .brand-row{height:94px}.brand{width:min(610px,78vw)!important}
