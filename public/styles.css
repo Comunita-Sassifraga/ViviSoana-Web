@@ -137,7 +137,9 @@ h2{font-size:clamp(2.75rem,5.4vw,5.4rem);line-height:.96;letter-spacing:-.052em;
 .passport-mission-digital{background:#eef4ee;border-color:#d9e5db}
 .passport-mission p.passport-mission-note{font-size:.79rem;margin-top:12px;color:#486053}
 .passport-mission-links{display:flex;flex-wrap:wrap;column-gap:18px;row-gap:10px;margin-top:auto;padding-top:20px}
-.passport-mission-links a{font-size:.85rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.passport-mission-links a{font-size:.85rem;font-weight:700;line-height:1.45;text-decoration:underline;text-underline-offset:3px}
+.passport-mission-links a:hover{opacity:.72}
+.passport-mission-links a:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:2px}
 .passport-v10-recognitions{margin-top:96px}
 .passport-final-award{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 20px;background:#334c44;color:#fff;border-radius:16px;padding:27px 30px;margin-top:24px}
 .passport-final-award span{font-size:.72rem;letter-spacing:.12em;font-weight:700;color:#d8e6dc}
