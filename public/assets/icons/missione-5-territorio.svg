@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-label="Vita del territorio">
+  <g stroke="#153D3A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M65 65V25" stroke="#438C59" stroke-width="4"/>
+    <path d="M65 43C37 45 29 27 34 12c18 0 31 8 31 31Z" fill="#B1D394"/>
+    <path d="M65 49c0-24 15-34 32-36 2 19-8 34-32 36Z" fill="#85B879"/>
+    <path d="M65 65c-19-5-29-14-33-26 20 0 31 8 33 26Z" fill="#D7EAAA"/>
+    <path d="M16 90h22l17-13c5-4 13-2 13 4v8l-12 8" />
+    <path d="M18 90c17-2 27 1 39 9l17-5 25-21c7-6 17-1 13 8l-30 30H42c-10-5-16-8-26-8" fill="#E9F2D8"/>
+    <path d="M11 86h10v24H11" fill="#A0CFC5"/>
+  </g>
+</svg>
