@@ -126,7 +126,7 @@ h2{font-size:clamp(2.75rem,5.4vw,5.4rem);line-height:.96;letter-spacing:-.052em;
 .passport-section-heading{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;margin-bottom:28px}
 .passport-section-heading h3{font-size:clamp(2.15rem,3.8vw,4.25rem);line-height:1.02;letter-spacing:-.05em;margin:0;max-width:700px}
 .passport-section-heading>p{color:var(--muted);font-size:1rem;line-height:1.6;margin:0 0 4px;max-width:440px}
-.passport-mission-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.passport-mission-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .passport-mission{background:#fbfaf6;border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;min-width:0;min-height:225px}
 .passport-mission-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:27px}
 .passport-mission-top span{font-size:.76rem;letter-spacing:.105em;font-weight:750;color:#496158}
@@ -140,6 +140,21 @@ h2{font-size:clamp(2.75rem,5.4vw,5.4rem);line-height:.96;letter-spacing:-.052em;
 .passport-mission-links a{font-size:.85rem;font-weight:700;line-height:1.45;text-decoration:underline;text-underline-offset:3px}
 .passport-mission-links a:hover{opacity:.72}
 .passport-mission-links a:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:2px}
+/* Iconografia vettoriale coordinata con il Passaporto cartaceo */
+.passport-mission:nth-child(3n+1){background:#eff8f7;border-color:#d7ebe8}
+.passport-mission:nth-child(3n+2){background:#f2f6ec;border-color:#e0e9d6}
+.passport-mission:nth-child(3n){background:#fff8e9;border-color:#f0e6ce}
+.passport-mission.passport-mission-digital{background:#fff8e9;border-color:#f0e6ce}
+.passport-mission-top{margin-bottom:12px}
+.passport-mission-main{display:grid;grid-template-columns:92px minmax(0,1fr);align-items:start;gap:20px;flex:1}
+.passport-mission-illustration{width:92px;height:92px;object-fit:contain;display:block}
+.passport-mission-copy{display:flex;flex-direction:column;min-width:0;align-self:stretch}
+.passport-mission-copy h4{margin-bottom:12px}
+.passport-mission-copy .passport-mission-links{margin-top:auto}
+.passport-award-header{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;margin-bottom:12px}
+.passport-award-header .passport-award-ref{margin-bottom:0}
+.passport-award-icon{width:58px;height:58px;object-fit:contain;flex-shrink:0}
+.passport-final-icon{width:76px;height:76px;object-fit:contain;flex-shrink:0;align-self:center;background:#e4f3ed;border-radius:50%;padding:6px}
 .passport-v10-recognitions{margin-top:96px}
 .passport-final-award{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 20px;background:#334c44;color:#fff;border-radius:16px;padding:27px 30px;margin-top:24px}
 .passport-final-award span{font-size:.72rem;letter-spacing:.12em;font-weight:700;color:#d8e6dc}
@@ -161,7 +176,8 @@ h2{font-size:clamp(2.75rem,5.4vw,5.4rem);line-height:.96;letter-spacing:-.052em;
   .brand-row{height:94px}.brand{width:min(610px,78vw)!important}
   .nav-inner{justify-content:flex-end}.main-nav{padding-top:112px}
   .hero{min-height:730px}
-  .passport-mission-grid,.recognition-grid-v10{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .passport-mission-grid{grid-template-columns:1fr}
+  .recognition-grid-v10{grid-template-columns:repeat(2,minmax(0,1fr))}
   .passport-section-heading{grid-template-columns:1fr;gap:14px}
   .passport-section-heading>p{max-width:760px}
 }
@@ -174,6 +190,10 @@ h2{font-size:clamp(2.75rem,5.4vw,5.4rem);line-height:.96;letter-spacing:-.052em;
   .passport-missions{margin-top:58px}
   .passport-mission-grid,.recognition-grid-v10{grid-template-columns:1fr}
   .passport-mission{min-height:0;padding:24px}
+  .passport-mission-main{grid-template-columns:76px minmax(0,1fr);gap:16px}
+  .passport-mission-illustration{width:76px;height:76px}
+  .passport-award-icon{width:50px;height:50px}
+  .passport-final-icon{width:62px;height:62px}
   .passport-v10-recognitions{margin-top:70px}
   .passport-section-heading h3{font-size:clamp(2rem,9vw,3rem)}
   .passport-validation{align-items:stretch;flex-direction:column}
@@ -318,4 +338,9 @@ body.menu-open .mobile-cta{display:none}
   .vihta-title-block h2 {
     font-size: clamp(3rem, 34cqi, 12rem);
   }
+}
+
+@media(max-width:420px){
+  .passport-mission-main{grid-template-columns:1fr;gap:12px}
+  .passport-mission-illustration{width:76px;height:76px}
 }
