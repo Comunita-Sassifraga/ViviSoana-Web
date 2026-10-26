@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-label="Tre comuni">
+  <g stroke="#153D3A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 68 33 44 51 61 71 29 114 72" stroke-width="4.5"/>
+    <path d="M23 88 39 76 56 88V112H23Z" fill="#DDF4F3"/>
+    <path d="M31 112V96h12v16" fill="#FFFFFF"/>
+    <path d="M52 88 68 75 84 88v24H52Z" fill="#E8F1D8"/>
+    <path d="M62 112V97h12v15" fill="#FFFFFF"/>
+    <path d="M88 78 100 68 113 78v34H88Z" fill="#FFF1B7"/>
+    <path d="M95 112V96h11v16M99 63v-9M94 59h10" />
+    <path d="M25 88h29M53 88h30M88 78h25" stroke="#168D86" stroke-width="4"/>
+    <path d="M18 113h101" stroke-width="3"/>
+  </g>
+</svg>
