@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-label="Digital Twin 3D">
+  <g stroke="#153D3A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 82 35 56 54 75 71 54 88 72" stroke-width="4"/>
+    <path d="M22 87h58" stroke="#6C9E83" stroke-width="3"/>
+    <path d="M68 15c-12 0-20 9-20 21 0 16 20 36 20 36s20-20 20-36c0-12-8-21-20-21Z" fill="#E7F2E7"/>
+    <circle cx="68" cy="36" r="7" fill="#FFE17B"/>
+    <path d="M66 79h14l6-9h15l6 9h9v32H66Z" fill="#E0F4F4"/>
+    <circle cx="92" cy="96" r="11" fill="#FFFDF7"/>
+    <path d="M72 85h6" stroke="#15928D" stroke-width="4"/>
+  </g>
+</svg>
