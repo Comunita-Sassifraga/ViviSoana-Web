@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-label="Cittadino della Valle">
+  <g stroke="#153D3A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m44 81-8 36 24-12 10 16 11-16 24 12-10-36" fill="#A6D5CD"/>
+    <circle cx="70" cy="56" r="39" fill="#E1F4F3"/>
+    <circle cx="70" cy="56" r="30" fill="#FFF7D7" stroke="#369B8C"/>
+    <path d="m70 33 7 15 17 2-12 12 3 17-15-8-15 8 3-17-12-12 17-2Z" fill="#FFD45D"/>
+    <path d="M70 12V5M29 55h-8M111 55h8" stroke="#F7C94C"/>
+  </g>
+</svg>
