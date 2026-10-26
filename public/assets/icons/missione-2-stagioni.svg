@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" aria-label="Quattro stagioni">
+  <g stroke="#153D3A" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 11v106M11 64h106" stroke="#A5C8BE" stroke-width="2.5"/>
+    <path d="M36 30c-10-16-23-2-12 8-14 1-14 17 0 17 1 14 18 13 18 0 14 1 17-15 3-17 9-13-4-23-12-8Z" fill="#E4F4E9"/>
+    <circle cx="35" cy="43" r="7" fill="#FFD56A"/>
+    <path d="M35 59v-9M35 59l-7 8" />
+    <circle cx="92" cy="36" r="16" fill="#FFE17B"/>
+    <path d="M92 10v7M92 55v8M65 36h8M111 36h8M72 16l6 6M106 50l6 6M73 56l6-6M106 22l6-6"/>
+    <path d="M19 94c5-18 22-24 37-23 1 23-11 37-31 34 0-4 2-8 4-11" fill="#D5E4A8"/>
+    <path d="m19 110 31-29M29 97l-3-13M37 89l11 2" />
+    <path d="M92 73v38M73 92h38M79 79l26 26M105 79 79 105" stroke="#2796A7"/>
+    <path d="m92 73-6 7m6-7 6 7m-6 31-6-7m6 7 6-7M73 92l7-6m-7 6 7 6m31-6-7-6m7 6-7 6" stroke="#2796A7"/>
+  </g>
+</svg>
