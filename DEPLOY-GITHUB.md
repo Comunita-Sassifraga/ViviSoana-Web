@@ -1,78 +1,49 @@
-# Deploy VIHTA su GitHub Pages — istruzioni
+# Pubblicazione del minisito ViviSoana su GitHub Pages
 
-Aggiornato l’8 ottobre 2026. Destinazione: un nuovo repository nell’organizzazione **Comunità Sassifraga** mostrata nella schermata condivisa.
+**Stato documentazione:** 26 ottobre 2026. Il repository è già stato creato e il workflow di deploy è presente e configurato nel codice. Questa guida sostituisce le vecchie istruzioni sul caricamento iniziale del pacchetto.
 
-## 1. Crea il repository
+## Repository e destinazione
+- Repository: https://github.com/Comunita-Sassifraga/ViviSoana-Web
+- Ramo di pubblicazione: `main`
+- Sito: https://comunita-sassifraga.github.io/ViviSoana-Web/
+- Workflow: `.github/workflows/pages.yml`
+- File distribuiti: soltanto il contenuto di `public/`.
 
-1. Dalla pagina dell’organizzazione, premi il pulsante verde **New** vicino all’elenco dei repository.
-2. Nel campo **Owner**, seleziona l’organizzazione Comunità Sassifraga.
-3. Scegli il nome **vihta-val-soana** e la visibilità **Public**.
-4. Crea il repository. Usa un repository separato per questo sito. Il repository “Wild-Working” mostrato nella schermata ospita un altro progetto.
+## Quando parte la pubblicazione
+Il workflow ha due eventi:
+1. **Automatico:** ogni aggiornamento del ramo `main` (evento `push`).
+2. **Manuale:** pulsante **Run workflow** in **Actions → Deploy VIVI su GitHub Pages** (evento `workflow_dispatch`).
 
-Se GitHub impedisce la creazione o l’organizzazione non compare fra gli Owner disponibili, occorre che un amministratore abiliti la creazione dei repository o crei questo repository e ti assegni i permessi necessari. La schermata iniziale non consente di verificare il tuo ruolo.
+L'aggiunta di un file a un **ramo separato** non pubblica nulla. Il merge di una PR in `main`, invece, avvia la distribuzione. Se la configurazione Pages non è attiva o mancano autorizzazioni, il workflow può fallire: verificare l'esito in Actions invece di presumere il successo.
 
-## 2. Carica i file
+## Procedura raccomandata
+1. Apri o consulta l'issue relativa alla modifica.
+2. Crea un ramo a partire dall'ultima versione di `main`.
+3. Modifica i file necessari, normalmente in `public/`; prepara le evidenze dei controlli.
+4. Apri una pull request verso `main`. Non fare merge prima di aver controllato effetti e contenuti.
+5. Dopo la revisione, esegui il merge; verifica in **Actions** che il workflow abbia esito positivo.
+6. Visita il sito pubblico e controlla almeno le parti interessate, il menu mobile, i link e l'apertura del PDF. Annotare anomalie e limiti di verifica.
 
-1. Scarica il pacchetto ZIP e usa **Estrai tutto** su Windows.
-2. Apri la cartella **VIHTA-GitHub-v18**.
-3. Nel repository, usa **Add file → Upload files**.
-4. Trascina le cartelle `public`, `scripts`, `source-sites` e i file `README.md`, `DEPLOY-GITHUB.md`, `MANIFEST.json`, `SHA256SUMS.txt`.
-5. Conferma con **Commit changes** sul ramo principale, normalmente `main`.
+Checklist dettagliata: [docs/VERIFICA-E-PUBBLICAZIONE.md](docs/VERIFICA-E-PUBBLICAZIONE.md).
 
-Carica i contenuti estratti: GitHub non estrae automaticamente lo ZIP. Nella schermata principale del repository deve comparire `public/index.html`; la cartella esterna `VIHTA-GitHub-v18` serve solo a raccogliere il download.
+## Come funziona la distribuzione
+Il workflow:
+- scarica i sorgenti con `actions/checkout@v6`;
+- legge la configurazione di Pages;
+- esegue `scripts/prepare-pages.py` per il percorso della pagina 404;
+- carica `public/` con `actions/upload-pages-artifact@v4`;
+- distribuisce con `actions/deploy-pages@v4`.
 
-### Carica anche il workflow
+Il sito è statico: la cartella `source-sites/` contiene il progetto di origine, con backend e migrazioni, ma **non** viene pubblicata né eseguita da GitHub Pages. Il modulo di contatto prepara una email a **info@sassifraga.org**, da inviare con un programma email configurato.
 
-Se hai caricato la cartella `.github`, verifica che esista `.github/workflows/pages.yml`.
+## Risoluzione problemi
+- **Sito vecchio:** controlla l'ultimo workflow in Actions e che il commit atteso sia in `main`; poi ricarica la pagina senza cache.
+- **Workflow non riuscito:** apri il job fallito e verifica messaggio e impostazioni Pages; in **Settings → Pages** la sorgente deve essere **GitHub Actions**.
+- **404 o link relativi rotti:** verifica che i percorsi puntino correttamente al repository `/ViviSoana-Web/`.
+- **PDF non aggiornato:** controlla la data e il contenuto di `public/assets/passaporto-della-valle.pdf`; una nuova pagina web non aggiorna il PDF automaticamente.
+- **Contatti non inviano:** il sito statico apre solo una bozza `mailto:`; serve un client di posta configurato e l'invio volontario dell'utente.
 
-Se la cartella non compare, usa **Add file → Create new file**, inserisci come nome **.github/workflows/pages.yml** e incolla il contenuto del file omonimo estratto dallo ZIP. Salva con **Commit changes**. In questo modo puoi completare tutto dal browser, senza installare Git.
+## Decisioni di contenuto
+Non cambiare senza autorizzazione sei missioni, sei riconoscimenti, titolo finale «Cittadino della Valle», uso di «timbri/timbrature», modalità di convalida e assenza dell'importo fisso di 20 €.
 
-## 3. Attiva Pages
-
-1. Apri il repository appena creato e seleziona **Settings**.
-2. Nel menu laterale scegli **Pages**.
-3. In **Build and deployment → Source**, seleziona **GitHub Actions**.
-
-L’hosting è GitHub Pages e il sito sarà accessibile pubblicamente. Il file `robots.txt` e i metadati scoraggiano l’indicizzazione; non limitano l’accesso ai visitatori.
-
-Se manca la scheda Settings o non puoi modificare Pages, chiedi i permessi amministrativi per questo repository all’amministratore dell’organizzazione.
-
-## 4. Avvia il deploy
-
-1. Apri **Actions**.
-2. Seleziona **Deploy VIHTA su GitHub Pages**.
-3. Premi **Run workflow**, seleziona il ramo su cui hai caricato i file e conferma.
-4. Attendi la spunta verde del job `deploy`.
-5. In **Settings → Pages**, apri **Visit site**. Usa l’URL mostrato da GitHub: non serve impostare un dominio personalizzato.
-
-Il workflow carica esclusivamente `public/` nell’hosting Pages. Il backend e le istruzioni rimangono nel repository. I permessi usano il token temporaneo fornito da GitHub Actions; non devi aggiungere password o token personali.
-
-## 5. Controlla il risultato
-
-- Logo e stemmi completi nell’intestazione.
-- “Leggere il cambiamento” senza una lettera isolata, anche su uno schermo ampio.
-- Menu mobile e collegamenti alle sezioni, compresa Video.
-- Pagina Osserva la Valle e collegamenti ARPA per temperatura e pioggia di Forzo.
-- Apertura del PDF del Passaporto.
-- Modulo contatti: compila i campi, premi **Prepara l’email**, verifica destinatario, oggetto e contenuto della bozza; conferma poi l’invio dal programma email.
-
-Per il modulo serve un programma o gestore di link `mailto:` configurato sul dispositivo. È sempre disponibile anche il collegamento diretto a **info@sassifraga.org**. Il sito non mostra una conferma di invio automatico.
-
-## Aggiornamenti e problemi frequenti
-
-Per aggiornare il sito, modifica i file in `public/`, salva le modifiche nel repository ed esegui nuovamente **Run workflow**. Per i contatti, il destinatario si modifica nell’attributo `action` del modulo e nel collegamento email di `public/index.html`.
-
-Se il workflow non compare, verifica il percorso `.github/workflows/pages.yml` sul ramo principale. Se fallisce la configurazione Pages, controlla Source = GitHub Actions. Se il sito mostra una versione precedente, attendi il completamento del deploy e aggiorna con Ctrl+F5. GitHub indica che la distribuzione può richiedere fino a circa dieci minuti.
-
-Per una pubblicazione dalla cartella `public/` usa il workflow incluso: l’opzione “Deploy from a branch” consente la radice o `/docs`, quindi non corrisponde alla struttura di questo pacchetto.
-
-Un futuro modulo con invio dal sito e salvataggio delle richieste richiede un backend o un servizio per moduli. Il codice originale è conservato in `source-sites/`; la sua migrazione è distinta dal deploy statico Pages.
-
-## Documentazione ufficiale
-
-- [Creazione del sito Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
-- [Configurazione della pubblicazione](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-- [Workflow personalizzati](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
-- [Cos’è GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
-
-Le correzioni responsive erano già state verificate da 320 a 2560 pixel. Il pacchetto è verificato localmente; il deploy GitHub effettivo sarà verificabile dopo l’esecuzione del workflow nel tuo repository.
+Approfondimenti: [stato progetto](docs/STATO-PROGETTO.md) · [istruzioni tecniche](AGENTS.md).
